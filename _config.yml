@@ -1,0 +1,5 @@
+# Define my timezone
+timezone: America/Los_Angeles
+
+# This is the default
+# future: false
