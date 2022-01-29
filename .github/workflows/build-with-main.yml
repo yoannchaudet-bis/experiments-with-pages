@@ -1,0 +1,21 @@
+# permissions:
+#   contents: read
+#   pages: write
+#   id-token: write
+
+name: pages build
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+      - name: Build page with Jekyll (@main)
+        uses: actions/jekyll-build-pages@main
+        with:
+          source: ./
+          destination: ./_site
